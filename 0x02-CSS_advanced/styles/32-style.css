@@ -190,6 +190,7 @@ a:active {
 
 .button:hover {
     /* Additional hover styles if needed */
+    background-color: var(--button-color);
 }
 
 /* Card Work Transitions */
