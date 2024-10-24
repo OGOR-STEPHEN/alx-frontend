@@ -1,0 +1,115 @@
+:root {
+    --color-primary: #d73953;
+    --color-black: #090909;
+    --color-white: #ffffff;
+    --color-light-grey: #f3f3f3;
+    --color-dark-grey: #353535;
+    --text-color: var(--color-black);
+    --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-size-small: 1.2rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 1.8rem;
+    --font-size-x-large: 2.3rem;
+    --font-size-xx-large: 4.8rem;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --line-height-small: 1.2;
+    --line-height-base: 1.5;
+    --line-height-big: 1.8;
+
+    /* New custom properties */
+    --header-padding: 4rem 0 0;
+    --header-logo-position: relative;
+    --header-logo-link-display: inline-block;
+    --header-logo-link-position: absolute;
+    --header-logo-link-top: -1rem;
+    --header-logo-link-left: 0;
+}
+
+/* Header styles */
+.header {
+    padding: var(--header-padding); /* Pad the header using the custom property */
+}
+
+/* Header Logo styles */
+.header-logo {
+    position: var(--header-logo-position); /* Set the logo's position */
+}
+
+/* Link inside the header logo */
+.header-logo a {
+    display: var(--header-logo-link-display); /* Set display to inline-block */
+    position: var(--header-logo-link-position); /* Position the link */
+    top: var(--header-logo-link-top); /* Set vertical position */
+    left: var(--header-logo-link-left); /* Set horizontal position */
+}
+
+/* Universal box-sizing rule */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Base styles */
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    color: var(--text-color);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+}
+
+/* Headings styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Anchor styles */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:visited {
+    font-style: italic;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    background-color: var(--color-light-grey);
+}
+
+/* Button styles */
+.button {
+    display: var(--button-display);
+    padding: var(--button-padding);
+    border: var(--button-border);
+    font-size: var(--button-font-size);
+    color: var(--button-color);
+    text-decoration: var(--button-text-decoration);
+}
+
+.button:hover {
+    color: var(--button-hover-color);
+    text-decoration: var(--button-hover-text-decoration);
+    background-color: var(--button-hover-background);
+}
+
+/* Dark theme for sections */
+[data-section-theme="dark"] {
+    --text-color: var(--color-white); /* Redefine text color to white */
+    --section-title-color: var(--color-white); /* Redefine section title color to white */
+    --button-color: var(--color-white); /* Redefine button text color to white */
+    background-color: var(--color-black); /* Set background to black */
+}
