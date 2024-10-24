@@ -132,6 +132,68 @@ a:hover {
 a:active {
     background-color: var(--color-light-grey);
 }
+
+/* Hide the checkbox */
+.menu-btn {
+    display: none; 
+}
+
+/* Style the menu icon (hamburger icon) */
+.menu-icon {
+    display: block;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    position: relative;
+}
+
+/* Create the navicon (hamburger lines) */
+.menu-icon .navicon {
+    position: relative;
+    background-color: #333;
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin-top: 15px;
+}
+
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+    content: '';
+    position: absolute;
+    background-color: #333;
+    width: 100%;
+    height: 5px;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+.menu-icon .navicon:before {
+    top: -10px;
+}
+
+.menu-icon .navicon:after {
+    top: 10px;
+}
+
+.menu-btn:checked + .menu-icon + .navbar-menu {
+    max-height: 500px; /* Set this high enough to fit your menu items */
+}
+
+/* When the menu is active (checked), animate the navicon to form an 'X' */
+.menu-btn:checked + .menu-icon .navicon {
+    background-color: transparent;
+}
+
+.menu-btn:checked + .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.menu-btn:checked + .menu-icon .navicon:after {
+    transform: rotate(45deg);
+    top: 0;
+}
   
 .button {
     display: var(--button-display);
@@ -175,11 +237,13 @@ a:active {
   /*** 2. LAYOUT ***/
   
   /* Layout  ============================= */
-  
-.container {
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+
+  /* 02-styles.css */
+
+  .container {
+    max-width: 100%; /* Updated from width to max-width */
+    margin: 0 auto;
+    padding: 0 2rem;
 }
   
 /* Grid  ============================= */
@@ -214,6 +278,10 @@ ul.row {
     list-style: none;
     text-align: center;
     display: flex;
+}
+
+.navbar-menu {
+    flex: 1;
 }
       
 .nav .nav-item {
@@ -269,6 +337,13 @@ ul.row {
     justify-content: space-between;
     align-items: center;
 } 
+
+.header nav {
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
 /*** 3. SECTION ***/
   
 /* Section (all styles)   ============================= */
