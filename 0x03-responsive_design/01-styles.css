@@ -1,0 +1,16 @@
+/* 01-styles.css */
+
+.hero-homepage {
+    background-image: url(images/banner-home.jpg); /* Ensure you have a background image */
+    background-position: 65% 8rem; /* Update the background position */
+    background-size: 90rem auto; /* Update the background size */
+}
+
+.section-hero .section-inner {
+    min-height: 35vh; /* Update the min-height */
+    display: flex; /* Optional: to center content vertically */
+    align-items: center; /* Optional: to center content vertically */
+    justify-content: center; /* Optional: to center content horizontally */
+    text-align: center; /* Optional: center text */
+    color: white; /* Optional: change text color for contrast */
+}
